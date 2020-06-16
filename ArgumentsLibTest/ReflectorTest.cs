@@ -16,7 +16,7 @@ namespace ArgumentsLibTest
     {
         private Reflector _reflector;
 
-        private static string _directory = @"..\Arguments\Marshaler";
+        private static string _directory = @"Marshaler";
 
         public ReflectorTest()
         {
