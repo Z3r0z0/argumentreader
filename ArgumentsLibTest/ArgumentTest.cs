@@ -8,7 +8,7 @@ namespace ArgumentsLibTest
 {
     public class ArgumentTest
     {
-        private static string _directoy = @"C:\Users\lwnmut1\source\repos\ArgumentsExtended\Arguments\Marshaler";
+        private static string _directoy = @"..\Arguments\Marshaler";
 
         [Theory]
         [InlineData("a", new string[] { })]
