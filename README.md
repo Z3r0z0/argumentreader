@@ -45,7 +45,12 @@ static void Main(stirng[] args)
 ``` csharp
 static void Main(stirng[] args)
 {
-    Argument arg = new Argument("...", "enabled,text*,number#,decimal##", "...");
+    Argument arg = new Argument("...", "enabled,text*,number#,comma##", "...");
+
+    bool enabled = parameter.GetValue<bool>("enabled");
+    string enabled = parameter.GetValue<string>("text");
+    int enabled = parameter.GetValue<int>("number");
+    double comma = parameter.GetValue<double>("comma");
 }
 ```
 
