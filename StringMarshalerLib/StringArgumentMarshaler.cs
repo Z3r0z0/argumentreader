@@ -15,7 +15,7 @@ namespace StringMarshalerLib
             }
             catch
             {
-                throw new StringMarshalerException(ErrorCode.INVALID_PARAMETER);
+                throw new StringMarshalerException(ErrorCode.MISSING);
             }
         }
 
