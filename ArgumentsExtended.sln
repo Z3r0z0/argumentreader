@@ -6,6 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Argument", "Arguments\Argument.csproj", "{0969C820-C07F-49C8-AAF3-8FE2788128C3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArgumentsLib", "ArgumentsLib\ArgumentsLib.csproj", "{766E48FD-516B-444C-B26F-89911A3428EB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3C39CE0A-7CA5-496F-AA1F-D218B811026D} = {3C39CE0A-7CA5-496F-AA1F-D218B811026D}
+		{085D601E-6E64-49B2-850B-300D30B4DACB} = {085D601E-6E64-49B2-850B-300D30B4DACB}
+		{97223567-1BC1-4888-AA3A-E30C1EEB563D} = {97223567-1BC1-4888-AA3A-E30C1EEB563D}
+		{78D7DAE5-783E-4E5A-93DB-CF157084EAAA} = {78D7DAE5-783E-4E5A-93DB-CF157084EAAA}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArgumentsLibTest", "ArgumentsLibTest\ArgumentsLibTest.csproj", "{759918E9-7E61-4BC9-9B26-3AC43903818E}"
 EndProject
@@ -25,9 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegerMarshalerTest", "Int
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArgumentMarshalerLibTest", "ArgumentMarshalerLibTest\ArgumentMarshalerLibTest.csproj", "{69F077A9-4112-4CBF-BED8-F3379204E4D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleMarshalerLib", "DoubleMarshalerLib\DoubleMarshalerLib.csproj", "{97223567-1BC1-4888-AA3A-E30C1EEB563D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoubleMarshalerLib", "DoubleMarshalerLib\DoubleMarshalerLib.csproj", "{97223567-1BC1-4888-AA3A-E30C1EEB563D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleMarshalerTest", "DoubleMarshalerTest\DoubleMarshalerTest.csproj", "{25DABBE6-0362-46F7-903A-3D89F9F78536}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoubleMarshalerTest", "DoubleMarshalerTest\DoubleMarshalerTest.csproj", "{25DABBE6-0362-46F7-903A-3D89F9F78536}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
