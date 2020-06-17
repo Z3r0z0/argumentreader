@@ -26,7 +26,8 @@ befor_deploy:
 
 deploy:
   privider: releases
-  token: latest
+  file:
+    $latest_zip
   override: true
   api_key: $GITHUB_TOKEN 
   file: "release.zip"
