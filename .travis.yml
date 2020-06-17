@@ -15,29 +15,22 @@ install:
   - dotnet restore
 
 script:
-  - dotnet build --configuration Release
   - dotnet test
-  - mkdir ./release
-  - dotnet publish -c Release -o ./release --self-contained false
-  - ls -l ./release
 
 befor_deploy:
-  - zip -r ./release.zip ./release
+  - dotnet build -c Release -o ./output
+  - zip ArgumentReader.zip ./output/*Lib.dll
 
 deploy:
   privider: releases
-  tag_name: latest
-  file:
-    - ArgumentsLib.dll
-    - ArgumentMarshalerLib.dll
-    - BooleanmarshalerLib.dll
-    - DoubleMarshalerLib.dll
-    - IntegerMarshalerLib.dll
-    - stringMarshalerLib.dll
   override: true
   api_key: $GITHUB_TOKEN 
-  file: "release.zip"
+  file:
+    - "./ArgumentReader.zip"
+    - "./output/BooleanMarshalerLib.dll"
+    - "./output/IntegerMarshalerLib.dll"
+    - "./output/DoubleMarshalerLib.dll"
+    - "./output/StringmarshalerLib.dll"
   skip_cleanup: true
-  keep_history: true
   on:
-    branch: master
+    tags: true
