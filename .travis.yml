@@ -32,7 +32,7 @@ deploy:
     - "./output/DoubleMarshalerLib.dll"
     - "./output/StringMarshalerLib.dll"
   script:
-    - /bin/sh ./deploy.sh
+    - ./deploy.sh
   skip_cleanup: true
   on:
     tags: true
