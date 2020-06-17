@@ -1,7 +1,31 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>CommandLineArgumentMarshalerLib</PackageId>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>T.M</Authors>
+    <Description>
+      With Argument Reader command line arguments can be passed into a .net core application. The standard project assist 4 types of arguments:
+
+      Boolean
+      Strings (*)
+      Integers (#)
+      Doubles (##)
+
+      Own argument types can be build with own classes. They need to inherit from the ArgumentMarshalerLib. Libraries are loading dynamically on startup. It is not necessary to recompile the complete solution.
+    </Description>
+    <Copyright>(c) 2020 T.M</Copyright>
+    <Company>T.M^GmbH</Company>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Z3r0z0/argumentreader</PackageProjectUrl>
+    <PackageTags>Command Line interface, CLI, Arguments</PackageTags>
+    <PackageId>CommandLineMarshalerLib</PackageId>
+  </PropertyGroup>
+
 
 </Project>

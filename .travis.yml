@@ -31,7 +31,8 @@ deploy:
     - "./output/IntegerMarshalerLib.dll"
     - "./output/DoubleMarshalerLib.dll"
     - "./output/StringMarshalerLib.dll"
-  script: dotnet nuget push -s https://api.nuget.org/v3/index.json -k $NUGET_ORG_KEY ./ArgumentsLib/bin/Debug/CommandLineArgumentsLib.1.0.$TRAVIS_BUILD_NUMBER.nupkg
+  script:
+    - /bin/sh ./deploy.sh
   skip_cleanup: true
   on:
     tags: true

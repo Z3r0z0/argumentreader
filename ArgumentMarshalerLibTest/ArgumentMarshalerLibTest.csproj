@@ -4,6 +4,16 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+    <Authors>T.M</Authors>
+
+    <Company>T.M^GmbH</Company>
+
+    <Product>ArgumentMarshalerLibTest</Product>
   </PropertyGroup>
 
   <ItemGroup>
