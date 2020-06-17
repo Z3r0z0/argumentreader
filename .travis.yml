@@ -21,7 +21,6 @@ befor_deploy:
   - dotnet build -c Release -o ./output
   - zip ArgumentReader.zip ./output/*Lib.dll
 
-
 deploy:
   provider: releases
   overwrite: true
@@ -31,7 +30,7 @@ deploy:
     - "./output/BooleanMarshalerLib.dll"
     - "./output/IntegerMarshalerLib.dll"
     - "./output/DoubleMarshalerLib.dll"
-    - "./output/StringmarshalerLib.dll"
+    - "./output/StringMarshalerLib.dll"
   skip_cleanup: true
   on:
     tags: true
