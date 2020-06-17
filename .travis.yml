@@ -27,6 +27,13 @@ befor_deploy:
 deploy:
   privider: releases
   tag_name: latest
+  file:
+    - ArgumentsLib.dll
+    - ArgumentMarshalerLib.dll
+    - BooleanmarshalerLib.dll
+    - DoubleMarshalerLib.dll
+    - IntegerMarshalerLib.dll
+    - stringMarshalerLib.dll
   override: true
   api_key: $GITHUB_TOKEN 
   file: "release.zip"
