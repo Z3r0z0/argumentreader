@@ -23,8 +23,8 @@ befor_deploy:
 
 
 deploy:
-  privider: releases
-  override: true
+  provider: releases
+  overwrite: true
   api_key: $GITHUB_TOKEN 
   file:
     - "./ArgumentReader.zip"
