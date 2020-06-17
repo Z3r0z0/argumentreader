@@ -9,17 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-
-    <Compile Update="StringArgumentMarshaler.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
     <CompiledFiles Include="$(TargetPath)"/>
   </ItemGroup>
-
-
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Copy
@@ -33,6 +24,5 @@
         SkipUnchangedFiles="true"
           />
   </Target>
-
 
 </Project>

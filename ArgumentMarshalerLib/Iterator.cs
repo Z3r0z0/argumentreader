@@ -6,32 +6,28 @@ namespace ArgumentMarshalerLib
 {
     public class Iterator<T>
     {
-        private readonly IList<T> _list;
-        private int _index;
+        private readonly IList<T> list;
+        private int index;
 
         public Iterator(IList<T> list)
         {
             if (list == null)
                 throw new NullReferenceException();
 
-            this._list = list;
+            this.list = list;
         }
 
-        public T Current
-        {
-            get => _list[_index];
-        }
-
-        public bool HasNext => _index < _list.Count;
+        public T Current => this.list[index];
+        public bool HasNext => this.index < this.list.Count;
 
         public T Next()
         {
-            return _list[_index++];
+            return this.list[this.index++];
         }
 
         public T Previous()
         {
-            return _list[--_index];
+            return this.list[--this.index];
         }
     }
 }

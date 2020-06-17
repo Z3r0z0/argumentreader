@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -14,17 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ArgumentMarshalerLib\ArgumentMarshalerLib.csproj" />
-    <ProjectReference Include="..\ArgumentsLib\ArgumentsLib.csproj" />
-    <ProjectReference Include="..\DoubleMarshalerLib\DoubleMarshalerLib.csproj" />
     <ProjectReference Include="..\IntegerMarshalerLib\IntegerMarshalerLib.csproj" />
-    <ProjectReference Include="..\StringMarshalerLib\StringMarshalerLib.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Marshaler\*.*">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>

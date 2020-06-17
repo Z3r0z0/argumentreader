@@ -2,7 +2,7 @@
   "profiles": {
     "Argument": {
       "commandName": "Project",
-      "commandLineArgs": "-a -b \"Test TESt\" -c  1324"
+      "commandLineArgs": "-bool -int 1234 -double 1234,3421 -string \"Das ist ein Text\""
     }
   }
 }

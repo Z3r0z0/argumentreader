@@ -1,23 +1,31 @@
-﻿using ArgumentsLib;
+﻿using ArgumentMarshalerLib;
+using ArgumentsLib;
 using System;
-using ArgumentException = ArgumentMarshalerLib.ArgumentException;
 
-namespace Arguments
+namespace Argument
 {
     class Program
     {
         static void Main(string[] args)
         {
-			try
-			{
-                Argument arg = new Argument(@"C:\Users\lwnmut1\source\repos\ArgumentsExtended\Arguments\Marshaler", "a, b*, c#", args);
+            Arguments parameter;
 
-                Console.WriteLine($"{arg.GetValue<bool>("a")} {arg.GetValue<string>("b")} {arg.GetValue<int>("c")}");
-			}
-			catch (ArgumentException ex)
-			{
+            try
+            {
+                parameter = new Arguments(@".\Marshaler", "bool,booltwo,int#,double##,string*", args);
+                Console.WriteLine("Arguments");
+            }
+            catch (ArgumentsException ex)
+            {
                 Console.WriteLine(ex.ErrorMessage());
-			}
+                return;
+            }
+
+            Console.WriteLine(parameter.GetValue<bool>("bool"));
+            Console.WriteLine(parameter.GetValue<bool>("booltwo"));
+            Console.WriteLine(parameter.GetValue<int>("int"));
+            Console.WriteLine(parameter.GetValue<double>("double"));
+            Console.WriteLine(parameter.GetValue<string>("string"));
 
             Console.ReadKey();
         }

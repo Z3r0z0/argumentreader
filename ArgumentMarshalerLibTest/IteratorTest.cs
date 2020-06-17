@@ -12,7 +12,7 @@ namespace ArgumentMarshalerLibTest
             "Das",
             "Ist",
             "Ein",
-            "Test"
+            "Test",
         };
 
         [Fact]
@@ -74,6 +74,7 @@ namespace ArgumentMarshalerLibTest
             iterator.Next();
             Assert.Equal(testList[1], iterator.Current);
         }
+
 
         [Fact]
         public void IteratorNextValue_FailingTest()

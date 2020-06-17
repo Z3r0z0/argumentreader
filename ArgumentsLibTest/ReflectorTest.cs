@@ -1,78 +1,58 @@
-﻿using ArgumentMarshalerLib;
+using ArgumentMarshalerLib;
 using ArgumentsLib;
-using BooleanMarshalerLib;
 using DoubleMarshalerLib;
-using IntegerMarschalerLib;
+using IntegerMarshalerLib;
 using StringMarshalerLib;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+using System.Diagnostics;
+using System.Linq;
 using Xunit;
 
 namespace ArgumentsLibTest
 {
     public class ReflectorTest
     {
-        private Reflector _reflector;
+        private string marshalers = @"Marshaler";
+        private string[] schemas = { "", "*", "#", "##" };
 
-        private static string _directory = @"Marshaler";
-
-        public ReflectorTest()
+        [Fact]
+        public void CreateReferenceAndSetDirectory_PassingTest()
         {
-            _reflector = new Reflector(_directory);
+            Reflector r = new Reflector(this.marshalers);
+
+            foreach (string schema in schemas)
+            {
+                Assert.Equal(schema, r.GetInstanceBySchema(schema).Schema);
+            }
+        }
+
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        public void CreateReferenceAndSetDirectory_FailingTest(string directory)
+        {
+            Reflector r;
+
+            ArgumentsException ex = Assert.Throws<LibraryArgumentException>(() => r = new Reflector(directory));
+
+            Assert.Equal(ErrorCode.GLOBAL, ex.ErrorCode);
+            Assert.Equal($"Marshaler Directory: {string.Empty} not found!", ex.ErrorParameter);
+
+            Assert.Equal($"There was an ERROR with 'Marshaler Directory: {string.Empty} not found!'", ex.ErrorMessage());
         }
 
         [Fact]
-        public void CreateReflector_PassingTest()
+        public void CreateReferenceAndSetDirectoryToWrongPath_FailingTest()
         {
+            string wrongPath = @"../";
+            Reflector r;
 
-            Assert.NotNull(_reflector);
-        }
+            ArgumentsException ex = Assert.Throws<LibraryArgumentException>(() => r = new Reflector(wrongPath));
 
-        [Fact]
-        public void CreateReflector_FailingTest()
-        {
-            Assert.Throws<LibraryArgumentException>(() => new Reflector(_directory + @"\dirNotExists"));
-        }
+            Assert.Equal(ErrorCode.GLOBAL, ex.ErrorCode);
+            Assert.Equal($"Marshaler Directory: {wrongPath} does not contain *MarshalerLib.dll files!", ex.ErrorParameter);
 
-        [Fact]
-        public void GetInstanceBySchemaBool_PassingTest()
-        {
-            var temp = _reflector.GetInstanceBySchema("");
-
-            Assert.IsType<BooleanArgumentMarshaler>(temp);
-        }
-
-        [Fact]
-        public void GetInstanceBySchemaInt_PassingTest()
-        {
-            var temp = _reflector.GetInstanceBySchema("#");
-
-            Assert.IsType<IntegerArgumentMarshaler>(temp);
-        }
-
-
-        [Fact]
-        public void GetInstanceBySchemaString_PassingTest()
-        {
-            var temp = _reflector.GetInstanceBySchema("*");
-
-            Assert.IsType<StringArgumentMarshaler>(temp);
-        }
-
-        [Fact]
-        public void GetInstanceBySchemaDouble_PassingTest()
-        {
-            var temp = _reflector.GetInstanceBySchema("##");
-
-            Assert.IsType<DoubleArgumentMarshaler>(temp);
-        }
-
-        [Fact]
-        public void GetInstanceBySchema_FailingTest()
-        {
-            Assert.Throws<LibraryArgumentException>(() => _reflector.GetInstanceBySchema(null));
+            Assert.Equal($"There was an ERROR with 'Marshaler Directory: {wrongPath} does not contain *MarshalerLib.dll files!'", ex.ErrorMessage());
         }
     }
 }

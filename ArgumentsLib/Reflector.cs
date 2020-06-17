@@ -6,8 +6,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-
-
 namespace ArgumentsLib
 {
     public class Reflector
@@ -23,13 +21,9 @@ namespace ArgumentsLib
             if (!Directory.Exists(marshalerPath))
                 throw new LibraryArgumentException(ErrorCode.GLOBAL, $"Marshaler Directory: {marshalerPath} not found!");
 
-
-
             this.marshalerPath = marshalerPath;
             this.assemblies = new List<Assembly>();
             this.types = new List<Type>();
-
-
 
             SetFilePaths();
             LoadAssemblies();
@@ -38,7 +32,10 @@ namespace ArgumentsLib
 
         private void SetFilePaths()
         {
-            filePath = Directory.GetFiles(marshalerPath, "*.dll");
+            filePath = Directory.GetFiles(marshalerPath, "*MarshalerLib.dll");
+
+            if (filePath.Count() == 0)
+                throw new LibraryArgumentException(ErrorCode.GLOBAL, $"Marshaler Directory: {marshalerPath} does not contain *MarshalerLib.dll files!");
         }
 
         private void LoadAssemblies()
@@ -60,7 +57,7 @@ namespace ArgumentsLib
         public ArgumentMarshaler GetInstanceBySchema(string schema)
         {
             if (schema == null)
-                throw new LibraryArgumentException(ErrorCode.INVALID_SCHEMA, this.ToString());
+                throw new LibraryArgumentException(ErrorCode.INVALID_SCHEMA, null);
 
             Type correctType = null;
 
@@ -70,8 +67,8 @@ namespace ArgumentsLib
                 PropertyInfo instanceInfo = type.GetProperty("Schema");
                 string value = instanceInfo.GetValue(instance).ToString();
 
-                if (value == null)
-                    throw new LibraryArgumentException(ErrorCode.INVALID_SCHEMA, this.ToString());
+                if(value == null)
+                    throw new LibraryArgumentException(ErrorCode.INVALID_SCHEMA, null);
 
                 if (schema == value)
                 {

@@ -1,5 +1,5 @@
 # Travis CI for building ArgumentReader
-# ----------------------------------------
+# --------------------------------------------
 
 language: csharp
 solution: ArgumentsExtended.sln
@@ -11,20 +11,20 @@ addons:
     packages:
       - zip
 
-install: 
+install:
   - dotnet restore
 
 script:
   - dotnet test
 
-befor_deploy:
+before_deploy:
   - dotnet build -c Release -o ./output
   - zip ArgumentReader.zip ./output/*Lib.dll
 
 deploy:
   provider: releases
   overwrite: true
-  api_key: $GITHUB_TOKEN 
+  api_key: $GITHUB_TOKEN
   file:
     - "./ArgumentReader.zip"
     - "./output/BooleanMarshalerLib.dll"
