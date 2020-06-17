@@ -21,6 +21,7 @@ befor_deploy:
   - dotnet build -c Release -o ./output
   - zip ArgumentReader.zip ./output/*Lib.dll
 
+
 deploy:
   privider: releases
   override: true
