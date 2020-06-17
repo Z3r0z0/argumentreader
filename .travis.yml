@@ -19,6 +19,8 @@ script:
 
 before_deploy:
   - dotnet build -c Release -o ./output
+  - dotnet nuget pack ArgumentsLib/bin/debug/CommandLineArgumentsLib.1.0.0.nupkg -version $TEST_VERSION -Verbosity detailed
+  - dotnet nuget pack ArgumentsLib/bin/debug/CommandLineArgumentsLib.1.0.0.nupkg $NUGET_ORG_KEY -Verbosity detailed -Source nuget.org
   - zip ArgumentReader.zip ./output/*Lib.dll
 
 deploy:
@@ -34,8 +36,4 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-
-after_deploy
-  script:
-    - ./deploy.sh
 
