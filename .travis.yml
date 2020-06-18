@@ -37,7 +37,7 @@ deploy:
 
 after_deploy:
   - dotnet pack ./ArgumentsLib -c Release -o ./nuget
-  - dotnet nuget push ./nuget/ArgumentsLib.*.nupkg -k $NUGET_ORG_KEY -s https://api.nuget.org/v3/index.json
+  - dotnet nuget push ./nuget/ComandLineArgumentsLib.*.nupkg -k $NUGET_ORG_KEY -s https://api.nuget.org/v3/index.json
   - rm -rf ./nuget
   - dotnet pack ./ArgumentMarshalerLib -c Release -o ./nuget
-  - dotnet nuget push ./nuget/ArgumentMarshalerLib.*.nupkg -k $NUGET_ORG_KEY -s https://api.nuget.org/v3/index.json
+  - dotnet nuget push ./nuget/CommandLineMarshalerLib.*.nupkg -k $NUGET_ORG_KEY -s https://api.nuget.org/v3/index.json
