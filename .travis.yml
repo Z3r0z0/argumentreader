@@ -13,13 +13,12 @@ addons:
 
 install:
   - dotnet restore
-  - pip install codecov
 
 script:
-  - codecov run -m dotnet test
+  - dotnet test -c Release /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
-after_success:
-  - bash <curl -s https://codecov.io/bash)
+after_script:
+  - bash <(curl -s https://codecov.io/bash)
 
 
 before_deploy:
