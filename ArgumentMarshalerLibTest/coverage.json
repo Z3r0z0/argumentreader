@@ -1,0 +1,127 @@
+{
+  "ArgumentMarshalerLib.dll": {
+    "C:\\Users\\lwnmut1\\Documents\\GitHub\\argumentreader\\ArgumentMarshalerLib\\ArgumentMarshaler.cs": {
+      "ArgumentMarshalerLib.ArgumentMarshaler": {
+        "System.Object ArgumentMarshalerLib.ArgumentMarshaler::get_Value()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\lwnmut1\\Documents\\GitHub\\argumentreader\\ArgumentMarshalerLib\\ArgumentsException.cs": {
+      "ArgumentMarshalerLib.ArgumentsException": {
+        "System.String ArgumentMarshalerLib.ArgumentsException::get_ErrorArgumentId()": {
+          "Lines": {
+            "36": 0
+          },
+          "Branches": []
+        },
+        "System.String ArgumentMarshalerLib.ArgumentsException::get_ErrorParameter()": {
+          "Lines": {
+            "37": 0
+          },
+          "Branches": []
+        },
+        "ArgumentMarshalerLib.ErrorCode ArgumentMarshalerLib.ArgumentsException::get_ErrorCode()": {
+          "Lines": {
+            "38": 0
+          },
+          "Branches": []
+        },
+        "System.Void ArgumentMarshalerLib.ArgumentsException::.ctor()": {
+          "Lines": {
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Void ArgumentMarshalerLib.ArgumentsException::.ctor(System.String)": {
+          "Lines": {
+            "23": 0
+          },
+          "Branches": []
+        },
+        "System.Void ArgumentMarshalerLib.ArgumentsException::.ctor(ArgumentMarshalerLib.ErrorCode)": {
+          "Lines": {
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0
+          },
+          "Branches": []
+        },
+        "System.Void ArgumentMarshalerLib.ArgumentsException::.ctor(ArgumentMarshalerLib.ErrorCode,System.String)": {
+          "Lines": {
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\lwnmut1\\Documents\\GitHub\\argumentreader\\ArgumentMarshalerLib\\Iterator.cs": {
+      "ArgumentMarshalerLib.Iterator`1": {
+        "T ArgumentMarshalerLib.Iterator`1::get_Current()": {
+          "Lines": {
+            "20": 4
+          },
+          "Branches": []
+        },
+        "System.Boolean ArgumentMarshalerLib.Iterator`1::get_HasNext()": {
+          "Lines": {
+            "21": 2
+          },
+          "Branches": []
+        },
+        "T ArgumentMarshalerLib.Iterator`1::Next()": {
+          "Lines": {
+            "24": 14,
+            "25": 14,
+            "26": 13
+          },
+          "Branches": []
+        },
+        "T ArgumentMarshalerLib.Iterator`1::Previous()": {
+          "Lines": {
+            "29": 2,
+            "30": 2,
+            "31": 1
+          },
+          "Branches": []
+        },
+        "System.Void ArgumentMarshalerLib.Iterator`1::.ctor(System.Collections.Generic.IList`1<T>)": {
+          "Lines": {
+            "12": 10,
+            "13": 10,
+            "14": 10,
+            "15": 1,
+            "17": 9,
+            "18": 9
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 14,
+              "EndOffset": 22,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 9
+            }
+          ]
+        }
+      }
+    }
+  }
+}

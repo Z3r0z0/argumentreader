@@ -13,9 +13,14 @@ addons:
 
 install:
   - dotnet restore
+  - pip install coverage
 
 script:
-  - dotnet test
+  - coverage run -m dotnet test
+
+after_success:
+  - bash <curl -s https://codecov.io/bash)
+
 
 before_deploy:
   - dotnet build -c Release -o ./output
