@@ -19,6 +19,7 @@ Own argument types can be build with own classes. They need to inherit from the 
     <PackageProjectUrl>https://github.com/Z3r0z0/argumentreader</PackageProjectUrl>
     <PackageTags>Command Line interface, CLI, Arguments</PackageTags>
     <PackageId>CommandLineArgumentsLib</PackageId>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>

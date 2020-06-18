@@ -25,6 +25,7 @@
     <PackageProjectUrl>https://github.com/Z3r0z0/argumentreader</PackageProjectUrl>
     <PackageTags>Command Line interface, CLI, Arguments</PackageTags>
     <PackageId>CommandLineMarshalerLib</PackageId>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
 
