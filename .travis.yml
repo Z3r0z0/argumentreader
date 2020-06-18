@@ -13,10 +13,10 @@ addons:
 
 install:
   - dotnet restore
-  - pip install coverage
+  - pip install codecov
 
 script:
-  - coverage run -m dotnet test
+  - codecov run -m dotnet test
 
 after_success:
   - bash <curl -s https://codecov.io/bash)
