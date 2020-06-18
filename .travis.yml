@@ -19,8 +19,6 @@ script:
 
 before_deploy:
   - dotnet build -c Release -o ./output
-  - dotnet nuget pack ArgumentsLib/bin/debug/CommandLineArgumentsLib.1.0.0.nupkg -version $TEST_VERSION -Verbosity detailed
-  - dotnet nuget pack ArgumentsLib/bin/debug/CommandLineArgumentsLib.1.0.0.nupkg $NUGET_ORG_KEY -Verbosity detailed -Source nuget.org
   - zip ArgumentReader.zip ./output/*Lib.dll
 
 deploy:
@@ -37,3 +35,11 @@ deploy:
   on:
     tags: true
 
+after_deploy:
+  - dotnet pack ./ArgumentsLib -c Release -o ./nuget
+  - dotnet nuget push ./nuget/*.nupkg -k $NUGET_ORG_KEY -s https://api.nuget.org/v3/index.json
+  - dotnet nuget push ./nuget/*.nupkg -k $GITHUB_TOKEN -s github
+  - rm -rf ./nuget
+  - dotnet pack ./ArgumentMarshalerLib -c Release -o ./nuget
+  - dotnet nuget push ./nuget/*.nupkg -k $NUGET_ORG_KEY -s https://api.nuget.org/v3/index.json
+  - dotnet nuget push ./nuget/*.nupkg -k $GITHUB_TOKEN -s github
