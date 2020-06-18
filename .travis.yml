@@ -38,8 +38,6 @@ deploy:
 after_deploy:
   - dotnet pack ./ArgumentsLib -c Release -o ./nuget
   - dotnet nuget push ./nuget/*.nupkg -k $NUGET_ORG_KEY -s https://api.nuget.org/v3/index.json
-  - dotnet nuget push ./nuget/*.nupkg -k $GITHUB_TOKEN -s github
   - rm -rf ./nuget
   - dotnet pack ./ArgumentMarshalerLib -c Release -o ./nuget
   - dotnet nuget push ./nuget/*.nupkg -k $NUGET_ORG_KEY -s https://api.nuget.org/v3/index.json
-  - dotnet nuget push ./nuget/*.nupkg -k $GITHUB_TOKEN -s github
